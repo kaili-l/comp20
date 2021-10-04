@@ -1,0 +1,23 @@
+*{
+    margin: 10px;
+}
+Songs {
+    color: white;
+    background-color : rgb(234, 226, 247);
+    width: 100%;
+}
+Heading {
+    color: rgb(52, 19, 78);
+    font-size : 40px;
+    font-weight: bold;
+    background-color :rgb(216, 196, 248);
+}
+Heading, Title, Artist, MusicGenre, ReleaseYear {
+    display : block;
+    color: #1e1e1e
+}
+Title {
+    font-size : 25px;
+    font-weight : bold;
+    line-height: 50px;
+}

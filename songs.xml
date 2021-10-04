@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="songstyle.css"?>
+<Songs>
+    <Heading>Set List</Heading>
+    <Song>
+        <Title>good 4 u</Title>
+        <Artist> Olivia Rodrigo </Artist>
+        <MusicGenre>Pop-punk</MusicGenre>
+        <ReleaseYear>2021</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Heat Waves</Title>
+        <Artist> Glass Animals </Artist>
+        <MusicGenre>R and B</MusicGenre>
+        <ReleaseYear>2020</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Miss Summer</Title>
+        <Artist> ODIE </Artist>
+        <MusicGenre>R and B</MusicGenre>
+        <ReleaseYear>2020</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Older</Title>
+        <Artist> Alec Benjamin </Artist>
+        <MusicGenre>Pop</MusicGenre>
+        <ReleaseYear>2021</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Affection</Title>
+        <Artist> Fiji Blue </Artist>
+        <MusicGenre>Pop</MusicGenre>
+        <ReleaseYear>2020</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Love Affair</Title>
+        <Artist> UMI </Artist>
+        <MusicGenre>R and B</MusicGenre>
+        <ReleaseYear>2019</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Crush</Title>
+        <Artist> Duckwrth </Artist>
+        <MusicGenre>Hip Hop</MusicGenre>
+        <ReleaseYear>2019</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>beside you</Title>
+        <Artist> keshi </Artist>
+        <MusicGenre>Pop</MusicGenre>
+        <ReleaseYear>2021</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>Honeybee</Title>
+        <Artist> The Head and The Heart </Artist>
+        <MusicGenre>Alternative</MusicGenre>
+        <ReleaseYear>2019</ReleaseYear>
+    </Song>
+    <Song>
+        <Title>It's Not the Same Anymore</Title>
+        <Artist> Rex Orange County </Artist>
+        <MusicGenre>Alternative</MusicGenre>
+        <ReleaseYear>2019</ReleaseYear>
+    </Song>
+</Songs>
