@@ -1,112 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOTUS YOGA STUDIOS</title>
-    <link rel="stylesheet" href= "style.css">
+    <h1>Joe's HotDog Stand</h1>
 </head>
 <style>
-    h1 {
-        color:rgb(243, 220, 199);
-        font-size: 40px;
-        background-color: rgb(226, 167, 118);
+    h1{
+        color:#3b0202;
+        background-color: rgb(245, 119, 102);
+        text-align: center;
+        font-family: sans-serif;
     }
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    h2{
+        color:#3b0202;
+        text-align: center;
+        font-family: sans-serif;
     }
-    .container {
-        position: relative;
-        text-align: left;
-        color: #fff;
-    }
-    .top-middle{
-        position: absolute;
-        top: 80px;
-        left: 700px;
-        font-size: 60px;
-    }
-    .left-side{
-        position: absolute;
-        top: 80px;
-        left: 70px;
-        font-size: 60px;
-    }
-    .under-image{
-        position:relative;
-        display: block;
-        margin-left: 125px;
-        color: #7e7b7b;
-    }
-    @media only screen and (max-width: 700px) {
-        .top-middle{
-            display: none;
-        }
-    }
-    @media only screen and (min-width: 700px) {
-        .left-side{
-            display: none;
-        }
-    }   
-
 </style>
-<body>
-    <div style="background-image: url('background.jpg');">
-<nav>
-    <ul>
-        <li>LOTUS YOGA STUDIO</li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Prices</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-</nav>
-<div class="dropdown">
-    <a href="#home" class="active">Menu</a>
-    <div id="Links">
-      <a href="index.html">Home</a>
-      <a href="product.html">Prices</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-    <a href="javascript:void(0);" class="icon" onclick="drop()">
-      <p style = "font-family: Arial, Helvetica, sans-serif;">V</p>
-    </a>
-</div>
+<body style="background-color:rgb(221, 171, 96);">
 <script>
-    function drop() {
-        var x = document.getElementById("Links");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
+    alert("Welcome to Joe's HotDog Stand.\nWe sell hotdogs, french fries and drinks. \n\nHotdogs: $3.75 \nFrench Fries: $2.00 \nDrinks: $1.50 ");
+    hotdogCount = prompt("How many hotdog order ($3.75) would you like?", 0);
+    friesCount = prompt("How many french fry orders ($2.00) would you like?", 0);
+    drinkCount = prompt("How many drink orders ($1.50) would you like?", 0);
+    document.write("<center>");
+    document.write("<h2>Thank you for your order!</h2>" + "<br>");
+    total = (hotdogCount*3.75 + friesCount*2 + drinkCount*1.5).toFixed(2);
+    subtotalText = "Subtotal: $" + total + "<br>";
+    document.write(subtotalText.bold());
+    document.write(hotdogCount + " Hotdogs: $" + (hotdogCount*3.75).toFixed(2) + "<br>");
+    document.write(friesCount + " French Fries: $" + (friesCount*2).toFixed(2) + "<br>");
+    document.write(drinkCount + " Drinks: $" + (drinkCount*1.5).toFixed(2) + "<br>");
+    if (total > 20){
+        discountText = "<br>" + "Joe's Discount: -$" + (total*.1).toFixed(2);
+        total = total - (total*.1).toFixed(2);
+        document.write(discountText.bold());
+        document.write("<br>" + "(10% off for orders over $20)");
     }
+    taxText = "<br><br>" + "MA Meal Tax: +$" + (total*.0625).toFixed(2);
+    total = (total*1.0625).toFixed(2);
+    document.write(taxText.bold());
+    document.write("<br>"+ "(6.25% tax)");
+    document.write("<br><br>" + "----------------------------");
+    totalText = "<br>" + "Total : $" + total;
+    document.write(totalText.bold());
+    document.write("</center>");
 </script>
-
-<div class = "container">
-    <img src="stretch.jpeg" width="1193" height="682" class = "center" alt="Stretch">
-    <div class = "top-middle">DO YOGA. BE HAPPY.</div>
-    <div class = "left-side">DO YOGA. BE HAPPY.</div>
-    <div class = "under-image">
-        <br><br>
-        <h6 style = "font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #1e1e1e">OUR APPROACH</h6>
-        <br>
-        <p style = "font-family: 'Times New Roman', Times, serif; margin-right:125px; font-size: 20px">
-            In our practice, we  believe yoga can empower all. 
-            <br><br>
-            We flow to connect mind with body—unlocking
-            the pathway toward healing and happiness. 
-            <br><br>
-            Our classes emphasize individuality in order to find our True Selves
-            while our community puts people and relationships first.
-            <br><br>
-            We embrace the eight limbs of yoga in everything we do;
-            valuing honesty, compassion, integrity, and standing up for our beliefs.
-            We also deeply value silliness, fun, and not taking life too seriously.</p>
-    </div>
-</div>
-<footer>
-	<p> 2021. Lotus Yoga Studio.</p>
-</footer>
 </body>
 </html>
