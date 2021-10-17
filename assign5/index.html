@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Lottery Simulator</h1>
+</head>
+<style>
+    h1{
+        font-family: sans-serif;
+        text-align: center;
+        display: block;
+        /* background-color: rgb(216, 153, 70); */
+        color: rgb(66, 26, 26);
+        /* color: #1e1e1e; */
+    }
+    .text{
+        font-family: sans-serif;
+        color: rgb(100, 46, 46);
+    }
+</style>
+<body style="background-color:rgb(228, 109, 109);">
+<center>
+<div class = "text">
+<script>
+    alert("Welcome to the Lottery Simulator! \nYou will be asked to pick 5 numbers between 1 and 48 inclusive and then 1 lucky number between 1 and 18 inclusive.");
+    unparsedNums = prompt("Enter 5 lottery numers between 1 and 48 inclusive. Type them seperated by commas");
+    userLuckyNum = prompt("Enter 1 lucky lottery number between 1 and 18 inclusive.");
+    parsedNums = unparsedNums.split(',');
+
+    sortedNums = parsedNums.sort(function (a, b) {  return a - b;  });
+    
+    nums = []
+    for (i = 0; i < 5; i++) {
+        nums[i] = Math.floor(Math.random() * (48))+1;
+    }
+
+    luckyNum = Math.floor(Math.random() * (18))+1;
+    nums = nums.sort(function (a, b) {  return a - b;  });
+
+    document.write("Winning 5 numbers: ");
+    for (i = 0; i < 5; i++){
+        document.write(nums[i] + " ");
+    }
+
+    document.write("<br>"+"Your 5 numbers: ");
+    for (i = 0; i < 5; i++){
+        document.write(sortedNums[i] + " ");
+    }
+
+    document.write("<br><br>"+ "Winning lucky ball: " + luckyNum + "\n\n");
+    document.write("<br>"+"Your lucky ball: " + userLuckyNum);
+
+    luckyBallRight = false;
+    if (userLuckyNum == luckyNum){
+        luckyBallRight = true;
+    }
+    if (luckyBallRight){
+        answer = "YES!!";
+    }else{
+        answer = "No :(";
+    }
+    document.write("<br><br>"+"Guessed lucky ball right? ", answer);
+    sameCount = 0;
+    i = j = 0;
+    while (i < 5 && j < 5){
+        if (nums[i] == sortedNums[j]){
+            sameCount += 1;
+            i += 1;
+            j += 1;
+        } else if (nums[i] > sortedNums[j]){
+            j += 1;
+        } else if (nums[i] < sortedNums[j]){
+            i += 1;
+        }
+    }
+    document.write("<br>"+"Number of winning numbers guessed: ", sameCount);
+    
+    prize = 0;
+    if (sameCount == 0 && luckyBallRight == true){
+        prize = 4;
+    }else if (sameCount == 1 && luckyBallRight == true){
+        prize = 6;
+    }else if(sameCount == 2){
+        if (luckyBallRight){
+            prize = 25;
+        }else{
+            prize = 3;
+        }
+    }else if(sameCount == 3){
+        if (luckyBallRight){
+            prize = 150;
+        }else{
+            prize = 20;
+        }
+    }else if(sameCount == 4){
+        if (luckyBallRight){
+            prize = 5000;
+        }else{
+            prize = 200;
+        }
+    }else if(sameCount == 5){
+        if (luckyBallRight){
+            prize = 7000;
+        }else{
+            prize = 25000;
+        }
+    }
+    winningText = "";
+    if (prize == 7000){
+        winningText = "$7,000 a WEEK for LIFE";
+    } else if (prize == 25000){
+        winningText = "$25,000 a YEAR for LIFE";
+    } else {
+        winningText = "$" + prize
+    }
+    formattedWinningText = "<br><br>" + "YOUR PAYOUT: " + winningText;
+    document.write(formattedWinningText);
+</script>
+</div>
+</center>
+</body>
+</html>
