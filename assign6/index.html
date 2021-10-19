@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+    <h1 style = "background:rgb(21, 82, 90); color:rgb(171, 203, 207)">Check Amicable Numbers</h1>
+    </center>
+</head>
+<style>
+    /* .h1{
+        background:rgb(21, 82, 90);
+    } */
+    .amicable{
+        display: none;
+    }
+    .notAmicable{
+        display: none;
+    }
+    .container{
+        background:rgb(171, 203, 207);
+    }
+</style>
+<body style="background-color:rgb(132, 194, 202);">
+    <center>
+    <div class="container">
+        <form  method = "GET">
+            <p>Please enter two numbers to check if they are amicable.</p>
+            <p>(Two numbers are amicable if the sum of the factors<br> of one is equal to the other number and vice versa.</p>
+            <div class="field">
+                <label for="name">Number 1:</label>
+                <input type="number" id="num1" name="num1" placeholder="Enter the first number" />
+                <small></small>
+            </div>
+            <div class="field">
+                <label for="email">Number 2:</label>
+                <input type="number" id="num2" name="num2" placeholder="Enter the second number" />
+                <small></small>
+            </div>
+            <br>
+            <div class="field">
+                <input type="submit" value="submit" onclick="return getNums();" />
+            </div>
+            <div id = "output"></div>
+        </form>
+    </div>
+    <br>
+    <div class = "amicable">
+        <p>The numbers <var>num1</var> and <var>num2</var> are amicable.</p>
+    </div>
+
+    <div class = "notAmicable">
+        <p>The numbers <var>num1</var> and <var>num2</var> are not amicable.</p>
+    </div>
+    </center>
+<script>
+    function getNums() {
+        event.preventDefault();
+        let num1 = document.getElementById('num1').value;
+        let num2 = document.getElementById('num2').value;
+        // document.write("num 1 ", num1);
+        // document.write("num 2 ", num2);
+
+        factorsOfNum1 = new Array;
+        factorsOfNum2 = new Array;
+
+        factorsOfNum1 = findFactors(num1, factorsOfNum1);
+        factorsOfNum2 = findFactors(num2, factorsOfNum2);
+        // document.write(typeof factorsOfNum1);
+
+
+        num1FactorsString = writeFactors(factorsOfNum1);
+        num2FactorsString = writeFactors(factorsOfNum2);
+        allStrings = "Factors of: " + num1 + ": \n" + num1FactorsString + "\n\nFactors of: " + num2 + ": \n" + num2FactorsString;
+        alert(allStrings);
+
+
+        sum1 = sumFactors(factorsOfNum1);
+        sum2 = sumFactors(factorsOfNum2);
+
+        if (sum1 == num2 && sum2 == num1) {
+            document.getElementById("output").innerHTML = "The numbers " + num1 + " and " + num2 + " are amicable.";
+        } else {
+            document.getElementById("output").innerHTML = "The numbers " + num1 + " and " + num2 + " are not amicable.";
+        }
+    }
+
+    function findFactors(num, factorsArray) {
+        for(let i = 1; i < num; i++){
+            if (num % i == 0) {
+                factorsArray.push(i);
+            }
+        }
+
+        return factorsArray
+    }
+
+    function writeFactors(factorsArray) {
+        allFactors = ""
+        for(let i = 0; i < factorsArray.length; i++) {
+            allFactors+=(factorsArray[i] + " ");
+        }
+        return allFactors;
+    }
+
+    function sumFactors(factorsArray) {
+        sumTotal = 0;
+        for(let i = 0; i < factorsArray.length; i++) {
+            sumTotal += factorsArray[i];
+        }
+        return sumTotal;
+    }
+
+</script>
+</body>
+</html>
