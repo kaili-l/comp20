@@ -6,9 +6,6 @@
     </center>
 </head>
 <style>
-    /* .h1{
-        background:rgb(21, 82, 90);
-    } */
     .amicable{
         display: none;
     }
@@ -56,15 +53,12 @@
         event.preventDefault();
         let num1 = document.getElementById('num1').value;
         let num2 = document.getElementById('num2').value;
-        // document.write("num 1 ", num1);
-        // document.write("num 2 ", num2);
 
         factorsOfNum1 = new Array;
         factorsOfNum2 = new Array;
 
         factorsOfNum1 = findFactors(num1, factorsOfNum1);
         factorsOfNum2 = findFactors(num2, factorsOfNum2);
-        // document.write(typeof factorsOfNum1);
 
 
         num1FactorsString = writeFactors(factorsOfNum1);
