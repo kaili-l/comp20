@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>SONGS JSON</title>
+        <h1>Songs List</h1>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<style>
+        h1{
+                background-color:rgb(240, 248, 255);
+                color: rgb(8, 43, 73);
+        }
+</style>
+<body style="background-color:rgb(184, 210, 233);">
+<form>
+        <label for="userGenre">Choose a music genre to filter the song list:</label>
+        <select name="userGenre" id="userGenre">
+                <option value="Pop-punk">Pop-punk</option>
+                <option value="R and B">R and B</option>
+                <option value="Pop">Pop</option>
+                <option value="Hip Hop">Hip Hop</option>
+                <option value="Alternative">Alternative</option>
+        </select>
+        <input type = "button" value = "Filter" />
+        <br><br>
+</form>
+<p id = "displaySongs"> Song List </p>
+<p id = "serializedData"> Serialized Data </p>
+<script>
+        var songsJSON = [
+        {
+                "Title": "good 4 u",
+                "Artist": "Olivia Rodrigo",
+                "MusicGenre": "Pop-punk",
+                "Year":"2021"
+        },
+        {
+                "Title": "Heat Waves",
+                "Artist": "Glass Animals",
+                "MusicGenre": "R and B",
+                "Year":"2020"
+        },
+        {
+                "Title": "Miss Summer",
+                "Artist": "ODIE",
+                "MusicGenre": "R and B",
+                "Year":"2020"
+        },
+        {
+                "Title": "Older",
+                "Artist": "Alec Benjamin",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        },
+        {
+                "Title": "Affection",
+                "Artist": "Fiji Blue",
+                "MusicGenre": "Pop",
+                "Year":"2020"
+        },
+        {
+                "Title": "Love Affair",
+                "Artist": "UMI",
+                "MusicGenre": "R and B",
+                "Year":"2019"
+        },
+        {
+                "Title": "Crush",
+                "Artist": "Duckwrth",
+                "MusicGenre": "Hip Hop",
+                "Year":"2019"
+        },
+        {
+                "Title": "beside you",
+                "Artist": "keshi",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        },
+        {
+                "Title": "Honeybee",
+                "Artist": "The Head and The Heart",
+                "MusicGenre": "Alternative",
+                "Year":"2019"
+        },
+        {
+                "Title": "",
+                "Artist": "keshi",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        }
+        ];
+        strSongs = JSON.stringify(songsJSON);
+        document.getElementById("serializedData").innerHTML = "<b>All Data</b><br>" + JSON.stringify(songsJSON);
+        jsonSongs = JSON.parse(strSongs);
+        allSongs = "<b>All Songs</b><br>";
+        songsJSON.forEach(function(song){
+                allSongs += ("Title: " + song.Title + "<br>");
+                allSongs += ("Artists: " + song.Artist + "<br>");
+                allSongs += ("Genre: " + song.MusicGenre + "<br>");
+                allSongs += ("Release Year: " + song.Year + "<br><br>");
+        })
+        document.getElementById("displaySongs").innerHTML = allSongs;
+  	
+        $(document).ready(function(){
+                $('input[type=button]').click(function() {
+                        var value = document.getElementById("userGenre").value;
+                        outputText = "<b>" + value + "&nbsp Songs </b><br><br>";
+                        songsJSON.forEach(function(song){
+                                if (song.MusicGenre.includes(value)){
+                                        outputText += ("Title: " + song.Title + "<br>");
+                                        outputText += ("Artists: " + song.Artist + "<br>");
+                                        outputText += ("Genre: " + song.MusicGenre + "<br>");
+                                        outputText += ("Release Year: " + song.Year + "<br><br>");
+                                }
+                        })
+                       document.getElementById("displaySongs").innerHTML = outputText;
+                        
+                })
+        });
+</script>
+</body>
+</html>
