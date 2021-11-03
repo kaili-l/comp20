@@ -1,0 +1,63 @@
+[
+        {
+                "Title": "good 4 u",
+                "Artist": "Olivia Rodrigo",
+                "MusicGenre": "Pop-punk",
+                "Year":"2021"
+        },
+        {
+                "Title": "Heat Waves",
+                "Artist": "Glass Animals",
+                "MusicGenre": "R and B",
+                "Year":"2020"
+        },
+        {
+                "Title": "Miss Summer",
+                "Artist": "ODIE",
+                "MusicGenre": "R and B",
+                "Year":"2020"
+        },
+        {
+                "Title": "Older",
+                "Artist": "Alec Benjamin",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        },
+        {
+                "Title": "Affection",
+                "Artist": "Fiji Blue",
+                "MusicGenre": "Pop",
+                "Year":"2020"
+        },
+        {
+                "Title": "Love Affair",
+                "Artist": "UMI",
+                "MusicGenre": "R and B",
+                "Year":"2019"
+        },
+        {
+                "Title": "Crush",
+                "Artist": "Duckwrth",
+                "MusicGenre": "Hip Hop",
+                "Year":"2019"
+        },
+        {
+                "Title": "beside you",
+                "Artist": "keshi",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        },
+        {
+                "Title": "Honeybee",
+                "Artist": "The Head and The Heart",
+                "MusicGenre": "Alternative",
+                "Year":"2019"
+        },
+        {
+                "Title": "",
+                "Artist": "keshi",
+                "MusicGenre": "Pop",
+                "Year":"2021"
+        }
+        
+]
