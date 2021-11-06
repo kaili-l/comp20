@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<title>Check Boxes</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body style="background-color:rgb(184, 157, 135);">
+        <h1>Check Boxes</h1>
+        <input type="checkbox" name='all' id="all"/>
+        <label for="all">Check All</label><br>
+        <br>
+        <input type="checkbox" name='first' id="first"/>
+        <label for="first">First</label><br>
+        <input type="checkbox" name='second' id="second"/>
+        <label for="second">Second</label><br>
+        <input type="checkbox" name='third' id="third"/>
+        <label for="third">Third</label><br>
+        <input type="checkbox" name='fourth' id="fourth"/>
+        <label for="fourth">Fourth</label><br>
+</body>
+<script language="javascript">
+
+$(document).ready(function(){
+	  
+	  $('#all').click(function() {
+                
+                if ( document.getElementsByTagName('label')[0].textContent == "Check All"){
+                        
+                        document.getElementsByTagName('label')[0].textContent = "Uncheck All";
+                        document.getElementById("first").checked = true;
+                        document.getElementById("second").checked = true;
+                        document.getElementById("third").checked = true;
+                        document.getElementById("fourth").checked = true;
+                } else {
+                        
+                        document.getElementsByTagName('label')[0].textContent = "Check All";
+                        document.getElementById("first").checked = false;
+                        document.getElementById("second").checked = false;
+                        document.getElementById("third").checked = false;
+                        document.getElementById("fourth").checked = false;
+                }
+               
+	  })
+})
+</script>
