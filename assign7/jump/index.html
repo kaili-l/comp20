@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+<title>Jump Button</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body style="background-color:rgb(135, 174, 184);">
+        <h1>Jump Button</h1>
+        <p>Click the button to move the text between input boxes</p>
+        <p>Feel free to change the text in the input box</p>
+        <input type="text"  name='box1' id="box1" value = "abc" />
+        <input type = "button" value = "Jump >" />
+        <input type="text"  name='box2' id="box2" />
+</body>
+<script language="javascript">
+
+$(document).ready(function(){
+	  
+	  $('input[type=button]').click(function() {
+                if (this.value == "Jump >"){
+                        this.value = "< Jump";
+                        document.getElementById("box2").value = document.getElementById("box1").value;
+                        document.getElementById("box1").value = "";
+                } else {
+                        this.value = "Jump >";
+                        document.getElementById("box1").value = document.getElementById("box2").value;
+                        document.getElementById("box2").value = "";
+                }
+	  })
+})
+</script>
