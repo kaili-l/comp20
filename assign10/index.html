@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>USA ZipCode API</h1>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<style>
+    
+</style>
+<body style="background-color:rgb(107, 152, 179);">
+<p>Enter a United States zip code to get details about the area</p>
+<input type="text" id="zipCode" name="zipCode" placeholder="Enter a zip code" />
+<input type="button" id="submit" value = "Submit" name = "submit">
+<script type="text/javascript">
+         $(document).ready(function(){
+                $('input[type=button]').click(function() {
+                        getZipInfo();
+                })
+         });
+        function getZipInfo() {
+			
+                request = new XMLHttpRequest();
+                
+                var userInput = document.getElementById("zipCode");
+		request.open("GET", "https://api.zippopotam.us/us/" + userInput.value, true)
+
+                request.onreadystatechange = function() {
+
+                        if (request.readyState == 4 && request.status == 200) {
+                                result = request.responseText;
+                                zipInfo = JSON.parse(result);
+                                writeInfo(zipInfo);
+                                
+                                document.getElementById("stateInfo").innerHTML ="State: " + zipInfo["places"][0]["state"]; 
+                        }
+                        else if (request.readyState == 4 && request.status != 200) {
+
+                                document.getElementById("invalidText").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+                        }
+                }
+                request.send();
+	}
+        function writeInfo(){
+                document.getElementById("stateInfo").innerHTML ="State: " + zipInfo["places"][0]["state"]; 
+                document.getElementById("stateAbrevInfo").innerHTML ="State Abbreviation: " + zipInfo["places"][0]["state abbreviation"]; 
+                document.getElementById("placeInfo").innerHTML ="Place: Name: " + zipInfo["places"][0]["place name"]; 
+                document.getElementById("longitude").innerHTML ="Longitude: " + zipInfo["places"][0]["longitude"]; 
+                document.getElementById("latitude").innerHTML ="Latitude: " + zipInfo["places"][0]["latitude"]; 
+        }
+</script>
+<p id = "invalidText"></p>
+<p id = "stateInfo"></p>
+<p id = "stateAbrevInfo"></p>
+<p id = "placeInfo"></p>
+<p id = "longitude"></p>
+<p id = "latitude"></p>
+<br>
+<p><b><u>API INFO</u></b></p>
+<p>The Zippopotam.us API provides information of the area that a given zip code
+        <br>represents. This site utilizes the API specifically for postal zip codes in the USA and
+        <br>provides information on the state, place, longitude and latitude that the zip code
+        <br>represents. The API can be found <a href="http://www.zippopotam.us/#">here</a>. <br>
+        <br> I used an XMLHttpRequest to get the information for the ZipCode using a GET 
+        <br> request. I asked for all the data and then parsed it to display the ones 
+        <br> I wanted to. I access those using the following keys: places, state, state
+        <br> abbreviation, place name, longitude and latitude. <br>
+        <br> One possible use of this API is for auto complete on forms so that when
+        <br> a user types in their zip code, the state and city can be filled in as well.
+        <br> Another possible use to for a whether website where the user types in a zip code.
+        <br> This API could be used to retrieve the longitude and latitude information to pass
+        <br> to a weather API to get that forecast information.
+</p>
+</body>
+</html>
