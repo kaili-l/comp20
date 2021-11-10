@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUFTS STUDENT ART GALLERY</title>
+    <link rel="stylesheet" href= "style.css">
+</head>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container {
+        position: relative;
+        text-align: left;
+        color: #fff;
+    }
+    .top-middle{
+        position: absolute;
+        top: 300px;
+        left: 700px;
+        font-size: 60px;
+    }
+    .left-side{
+        position: absolute;
+        top: 300px;
+        left: 70px;
+        font-size: 60px;
+    }
+    .under-image{
+        position:relative;
+        display: block;
+        margin-left: 125px;
+        color: #7e7b7b;
+    }
+    @media only screen and (max-width: 1200px) {
+        .top-middle{
+            display: none;
+        }
+    }
+    @media only screen and (min-width: 1200px) {
+        .left-side{
+            display: none;
+        }
+    }   
+
+    .row {
+                display: flex;
+        }
+        .column {
+                flex: 50%;
+                padding: 10px;
+                margin-left: 50px;
+        }
+        .column1 {
+                flex: 50%;
+                padding: 8px;
+        }
+        .artistProfile{
+              
+                padding: 10px;
+                text-align: center;
+        }
+
+        button {
+            color:rgb(243, 220, 199);
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(226, 167, 118);
+            padding: 15px 32px;
+             text-align: center;
+             text-decoration: none;
+            display: inline-block;
+
+}
+
+</style>
+<body>
+<nav>
+    <ul style = "padding-bottom: 100px;">
+        <li><a href="index.html">
+                <img alt="Logo" src="logo.png"
+                width="173" height="144" class = "center">
+             </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="artists.html">Our Artists</a></li>
+        <li><a href="artist1.html">Artist1</a></li>
+        <li><a href="artist2.html">Artist2</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
+<div class="dropdown">
+    <a href="#home" class="active">Menu</a>
+    <div id="Links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="artists.html">Our Artists</a>
+      <a href="artist1.html">Artist1</a>
+      <a href="artist2.html">Artist2</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="drop()">
+      <p style = "font-family: Arial, Helvetica, sans-serif;">V</p>
+    </a>
+</div>
+<script>
+    function drop() {
+        var x = document.getElementById("Links");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    
+
+    
+   const myArray = ["A Day Outside","Ava in Marbles","Tobby"];
+
+   function showSale(){
+      myArray.forEach(el => {
+         document.getElementById('result').innerHTML +=(el+'</br>');
+         
+      });
+     
+   };
+
+
+    
+</script>
+<br><br><br><br><br>
+
+<center>
+    <h1>Every week Ava selects pieces on 20% sale</h1>
+    <br>
+    <button  onclick="showSale(); this.onclick=null;" >Click to Find Out This Week's Picks</button>
+    <h2 id="result"></h2>
+</center>
+
+
+
+<div class="row">
+    <div class="column">
+            <div class = "artistProfile">
+        
+                            <img alt="Piece1" src="ava1.jpeg"  width="330px" height="350px" class = "center">
+                               <p>Piece: "Chikn"</p>
+                                <p>Negotiable Price: $80</p>
+                           
+                    
+            </div>
+    </div>
+    <div class="column">
+            <div class = "artistProfile">
+            
+                            <img alt="Piece2" src="ava2.jpeg" width="330px" height="350px" class = "center">
+                            <p>Piece: "A Day Outside"</p>
+                                <p>Negotiable Price: $120</p>
+                            
+                    
+            </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            
+                    <img alt="Piece3" src="ava3.jpeg" width="330px" height="350px" class = "center">
+                    <p>Piece: "Art Break"</p>
+                    <p>Negotiable Price: $90</p>
+                    
+        
+       </div>
+            
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+            <div class = "artistProfile">
+                <img alt="Piece4" src="ava4.jpeg" width="330px" height="350px" class = "center">
+                
+                <p>Piece: "Ava in Marbles"</p>
+                <p>Negotiable Price: $105</p>
+            </div>
+    </div>
+    <div class="column">
+            <div class = "artistProfile">
+                <img alt="Piece5" src="ava5.jpeg" width="330px" height="350px" class = "center">
+                
+                <p>Piece: "Seasonal Depression"</p>
+                <p>Negotiable Price: $50</p>
+                
+            </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece6" src="ava6.jpeg" width="330px" height="350px" class = "center">
+            <p>Piece: "Tobby"</p>
+            <p>Negotiable Price: $130</p>
+           
+       </div>
+            
+    </div>
+</div>
+
+
+
+
+
+
+<footer>
+	<p> 2021. Tufts Student Art Gallery.</p>
+</footer>
+</body>
+</html>

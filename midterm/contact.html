@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUFTS STUDENT ART GALLERY - CONTACT US</title>
+    <link rel="stylesheet" href= "style.css">
+</head>
+<body>
+    <div style = "background-image: url('white-color-solid-background-1920x1080.png');"
+    <nav>
+        <ul style = "padding-bottom: 100px;">
+            <li><a href="index.html">
+                    <img alt="Logo" src="logo.png"
+                    width="173" height="144" class = "center">
+                 </a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="artists.html">Our Artists</a></li>
+            <li><a href="artist1.html">Artist1</a></li>
+            <li><a href="artist2.html">Artist2</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br><br>
+    <div class = "banner">
+       <center><h1>CONTACT US</h1></center>
+    </div>
+
+    <div class="form">
+        <script language="javascript">
+            function sendMessage() {
+                if (document.getElementById("lastName").value == "") {
+                    alert("Last Name is a required field."); /* need to make this alert red!!! HELP */
+                    return 0; 
+                }
+                if (document.getElementById("firstName").value == "") {
+                    alert("First Name is a required field.");
+                    return 0; 
+                }
+                if (document.getElementById("email").value == "") {
+                    alert("Email is a required field.");
+                    return 0; 
+                }
+                if (!isValidEmail()) {
+                    alert("Please enter a valid email.");
+                    return 0; 
+                }
+                document.getElementById("lastName").value = "";
+                document.getElementById("firstName").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("newsLetter").checked = false;
+                document.getElementById("message").value = "";
+            }
+            function isValidEmail() {
+                email = document.getElementById("email").value;
+                myArray = email.split(""); 
+                for (i = 0; i < (myArray.length - 1); i++) {
+                    if(myArray[i] == "@") {
+                        return true; 
+                    }
+                }
+                return false; 
+            }
+        </script>
+        <form onsubmit="return false" id="myForm"></form>
+        Last Name: 
+        <input type="text" placeholder="last name" id="lastName" />
+        <br><br> 
+        First Name: 
+        <input type="text" placeholder="first name" id="firstName" />
+        <br><br>
+        Email: 
+        <input type="email" placeholder="email address" id="email" />
+        <br><br>
+        <input type="checkbox" id="newsLetter" /> Send me monthly newsletter to receive updates!
+        <br><br>
+        <span>Send us a message!</span>
+        <br>
+        <textarea id="message" cols="50" rows="10"></textarea>
+        <br>
+        <button onclick="sendMessage();">Send Message</button>
+    </div>
+
+    <br><br><br><br><br>
+
+    <footer>
+	    <p> 2021. Tufts Student Art Gallery.</p>
+    </footer>
+
+</body>
+</html> 

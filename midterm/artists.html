@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Artists</title>
+    <link rel="stylesheet" href= "style.css">
+</head>
+<style>
+        .row {
+                display: flex;
+        }
+        .column {
+                flex: 50%;
+                padding: 10px;
+        }
+        .artistProfile{
+                /* display: inline-block; */
+                /* width: 200px;
+                height: 200px; */
+                padding: 10px;
+                text-align: center;
+        }
+</style>
+<body>
+<nav>
+<ul style = "padding-bottom: 100px;">
+        <li><a href="index.html">
+                <img alt="Logo" src="logo.png"
+                width="173" height="144" class = "center">
+                </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="artists.html">Our Artists</a></li>
+        <li><a href="artist1.html">Artist1</a></li>
+        <li><a href="artist2.html">Artist2</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+<div class="dropdown">
+<a href="#home" class="active">Menu</a>
+<div id="Links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="artists.html">Our Artists</a>
+        <a href="artist1.html">Artist1</a>
+        <a href="artist2.html">Artist2</a>
+        <a href="contact.html">Contact Us</a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="drop()">
+        <p style = "font-family: Arial, Helvetica, sans-serif;">V</p>
+</a>
+</div>
+<script>
+function drop() {
+        var x = document.getElementById("Links");
+        if (x.style.display === "block") {
+        x.style.display = "none";
+        } else {
+        x.style.display = "block";
+        }
+}
+</script>
+<br><br><br><br><br>
+<h1 style = "text-align: center; font-family: Arial, Helvetica, sans-serif;">OUR ARTISTS</h1>
+<br><br><br>
+<center>
+<div class="row">
+        <div class="column">
+                <div class = "artistProfile">
+                        <a href="artist1.html">
+                                <img alt="Riley" src="w_rowing_Bray.jpg"  width="300" max-height="400" overflow = "hidden" class = "center">
+                                <div class = "under-image">
+                                        <p>Riley Bray</p>
+                                </div>
+                        </a>
+                </div>
+        </div>
+        <div class="column">
+                <div class = "artistProfile">
+                        <a href="artist2.html">
+                                <img alt="Ava" src="ava.png" width="390" height="420" class = "center">
+                                <div class = "under-image">
+                                        <p>Ava Mendelson</p>
+                                </div>
+                        </a>
+                </div>
+        </div>
+        <div class="column">
+                
+                <p style = "margin-top: 200px; font-family: Arial, Helvetica, sans-serif; font-size: 20pt;">MORE TO COME</p>
+                
+        </div>
+</div>
+<br><br><br>
+</center>
+<footer>
+        <p> 2021. Tufts Student Art Gallery.</p>
+</footer>
+</body>
+</html>

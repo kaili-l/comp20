@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUFTS STUDENT ART GALLERY</title>
+    <link rel="stylesheet" href= "style.css">
+</head>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row {
+                display: flex;
+        }
+    .column {
+            flex: 50%;
+            padding: 10px;
+            margin-left: 50px;
+    }
+    
+    .artistProfile{
+            
+            padding: 10px;
+            text-align: center;
+    }
+
+    button {
+        color:rgb(243, 220, 199);
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(226, 167, 118);
+        padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+        display: inline-block;
+
+    }
+    .bannerI{
+        animation: fadeIn ease 10s;
+        -webkit-animation: fadeIn ease 10s;
+        -moz-animation: fadeIn ease 10s;
+        -o-animation: fadeIn ease 10s;
+        -ms-animation: fadeIn ease 10s;
+    }
+
+    @keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+    }
+
+</style>
+<body>
+<nav>
+    <ul style = "padding-bottom: 100px;">
+        <li><a href="index.html">
+                <img alt="Logo" src="logo.png"
+                width="173" height="144" class = "center">
+             </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="artists.html">Our Artists</a></li>
+        <li><a href="artist1.html">Artist1</a></li>
+        <li><a href="artist2.html">Artist2</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
+<div class="dropdown">
+    <a href="#home" class="active">Menu</a>
+    <div id="Links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="artists.html">Our Artists</a>
+      <a href="artist1.html">Artist1</a>
+      <a href="artist2.html">Artist2</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="drop()">
+      <p style = "font-family: Arial, Helvetica, sans-serif;">V</p>
+    </a>
+</div>
+<script>
+    function drop() {
+        var x = document.getElementById("Links");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+   
+</script>
+<br><br><br><br><br>
+<div class = "bannerI">
+    <center><h1>Riley Bray's works </h1></center>
+<div class="row">
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece1" src="riley1.jpeg"  width="330px" height="390px" class = "center">
+            <p>Piece: "Untitled"</p>
+            <p>Negotiable Price: $75</p>
+        </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece2" src="riley2.jpeg" width="330px" height="390px" class = "center">
+            <p>Piece: "Chloe"</p>
+            <p>Negotiable Price: $50</p>
+        </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece3" src="riley3.jpeg" width="330px" height="390px" class = "center">
+            <p>Piece: "Art Break"</p>
+            <p>Negotiable Price: $90</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece4" src="riley4.jpeg" width="330px" height="390px" class = "center">
+            
+            <p>Piece: "6 Feet (colored pencil drawing)"</p>
+            <p>Negotiable Price: $105</p>
+        </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece5" src="maddieAndRiley.jpeg" width="330px" height="390px" class = "center">
+            
+            <p>Piece: "Madie's Jerseys"</p>
+            <p>Negotiable Price: $150</p>
+            
+        </div>
+    </div>
+    <div class="column">
+        <div class = "artistProfile">
+            <img alt="Piece6" src="riley6.JPG" width="330px" height="390px" class = "center">
+            <p>Piece: "Ana"</p>
+            <p>Negotiable Price: $130</p>
+           
+       </div>  
+    </div>
+</div>
+</div>
+
+
+
+<footer>
+	<p> 2021. Tufts Student Art Gallery.</p>
+</footer>
+</body>
+</html>

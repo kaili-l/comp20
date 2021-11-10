@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Statement</title>
+    <link rel="stylesheet" href= "style.css">
+</head>
+<style>
+    
+    h1 {
+        color:#545454;
+        font-size: 40px;
+      
+    }
+    
+    .mission{
+        width: 100%;
+        height: 600px;
+   
+    }
+    .statement{
+        width:750px;
+        height:350px;
+        position: fixed;
+        background-color: #fff;
+        top: 40%;
+        left: 31%;
+        margin-top: -100px;
+        margin-left: -100px;
+        position: absolute; 
+        flex: 0 0 120px;
+    }
+    .bannerI{
+        animation: fadeIn ease 10s;
+        -webkit-animation: fadeIn ease 10s;
+        -moz-animation: fadeIn ease 10s;
+        -o-animation: fadeIn ease 10s;
+        -ms-animation: fadeIn ease 10s;
+    }
+    
+    @keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+    }
+
+</style>
+<body>
+<nav>
+    <ul style = "padding-bottom: 100px;">
+        <li><a href="index.html">
+                <img alt="Logo" src="logo.png"
+                width="173" height="144" class = "center">
+             </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="artists.html">Our Artists</a></li>
+        <li><a href="artist1.html">Artist1</a></li>
+        <li><a href="artist2.html">Artist2</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
+<div class="dropdown">
+    <a href="#home" class="active">Menu</a>
+    <div id="Links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="artists.html">Our Artists</a>
+      <a href="artist1.html">Artist1</a>
+      <a href="artist2.html">Artist2</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="drop()">
+      <p style = "font-family: Arial, Helvetica, sans-serif;">V</p>
+    </a>
+</div>
+<br><br><br>
+<div class = "bannerI">
+ 
+<div class="mission" style="background-image: url('bbA.jpeg')" >
+    <br><br>
+    <div class = "statement" style="border: 8px solid #545454">
+<center>
+    <br><br>
+    <h1>Mission Statement</h1>
+    <br>
+    <h2 style="color:#545454">The mission of the Tufts Student Art Gallery is to tell the story
+        of SMFA students as well as reward them financially through displaying and selling their art. 
+        All profits go directly to the artists.</h2>
+
+</center>
+</div>
+</div>
+</div>
+<script>
+    function drop() {
+        var x = document.getElementById("Links");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+<footer>
+	<p> 2021. Tufts Student Art Gallery.</p>
+</footer>
+</body>
+</html>
